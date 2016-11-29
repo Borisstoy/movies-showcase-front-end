@@ -1,0 +1,441 @@
+@import 'colors';
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	font-family: 'Lato', sans-serif;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+.clearfix:before, .clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear:both;
+}
+
+.wrapper {
+	width: 1440px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 300;
+}
+
+#top_header {
+	padding: 1.5em 0;
+	.logo{
+		float: left;
+		text-transform: uppercase;
+		font-weight: 800;
+		color: $dark;
+		font-size: 1.2em;
+	}
+	#main_nav {
+		float: right;
+		font-size: 0.9em;
+		padding-top: 1em;
+		a {
+			color: $secondary;
+			text-decoration: none;
+			padding: 0 1em 0 1em;
+			&:hover {
+				color: $dark;
+			}
+		}
+	}
+}
+
+.menu {
+	display: none;
+}
+
+#banner {
+	background: url(../images/banner_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding: 6.5em 0;
+	#banner_content_wrapper {
+		width: 900px;
+		max-width: 90%;
+		margin: 0 auto;
+		display: flex;
+		/* display: flex: layout mode providing for the arrangement of elements on a page
+		such that the elements behave predictably when the page layout 
+		must accommodate different screen sizes and different display devices*/
+		justify-content: center;
+		align-items: center;
+	}
+	#poster {
+		width: 275px;
+		position: relative;
+		float: left;
+		.featured_image {
+			width: 100%;
+			max-width: 100%;
+			border-radius: .15em;
+		}
+		.play_button {
+			position: absolute;
+			width: 80px;
+
+			left: 50%;
+			top: 50%;
+			/*bringing back to the middle of the poster, half of 80*/
+			margin: -40px 0 0 -40px;
+		}
+	}
+	#content {
+		float: left;
+		width: 500px;
+		margin-left: 100px;
+		.title {
+			/*forces 1 line display*/
+			display: inline;
+			font-size: 1.8em;
+			color: $white;
+		}
+		.ratings {
+			/*forces 1 line display*/
+			display: inline;
+			color: $white;
+			margin: 0 0 0 .8em;
+			i {
+				color: $highlight;
+				font-size: 1.3em;
+				padding: 0 .2em 0 .2em;
+			}
+			.inactive {
+				color: $secondary;
+			}
+		}
+		.description {
+			font-size: 1.2em;
+			color: $light;
+			font-weight: 300;
+			line-height: 1.8em;	
+
+		}
+		.info {
+			color: $white;
+			font-size: 0.75em;
+			font-weight: 700;
+			line-height: 1.5em;
+			span {
+				margin: 0 .5em;
+			}
+		}
+	}
+}
+
+#top_movies, #top_shows {
+	padding: 5em 0;
+	header {
+		padding: 0 0 1.5em 0;
+		h2, .view_more {
+			display: inline;
+		}
+		h2 {
+			font-size: 1.75em;
+		}
+		.view_more {
+			float: right;
+			font-size: 0.8em;
+			margin: .75em 4.5% 0 0;
+		}
+	}
+}
+
+#top_movies {
+	border-bottom: 1px solid $light;
+}
+
+.row {
+	width: 100%;
+	.post {
+		/*100 / 6 minus the margin right*/
+		width: 14%;
+		float: left;
+		margin-right: 2.3%;
+		img {
+			width: 100%;
+			max-width: 100%;
+			border-radius: .15em;
+		}
+		.title {
+			font-size: 1.25em;
+			margin: 1em 0 0 0 0;
+			color: $dark;
+		}
+		.post_info {
+			font-size: .75em;
+			color: $secondary;
+			margin: .5em 0;
+		}
+	}
+}
+
+#newsletter {
+	padding: 5em 0;
+	text-align: center;
+	background: #2980b9; /* fallback for old browsers */
+	background: -webkit-linear-gradient(120deg, #2980b9 , #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(120deg, #2980b9 , #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	.newsletter_inner {
+		width: 600px;
+		margin: 0 auto;
+	}
+	h2 {
+		font-size: 1.75em;
+		color: $light;
+	}
+	.sign_up_form {
+		margin-top: 3em;
+		input[type="text"], input[type="email"] {
+			width: 48%;
+			margin: 0 .5%;
+			height: 3.25em;
+			border: none;
+			outline: none;
+			border-radius: .15em;
+			padding: 1.2em 1.75em;
+			background: $white;
+			font-size: 1em;
+			color: $dark;
+		}
+		.button {
+			border: none;
+			width: 50%;
+			border-radius: .3em;
+			border: 1px solid $white;
+			background: none;
+			outline: none;
+			font-size: 1.2em;
+			font-weight: 500;
+			color: $light;
+			padding: 1.1em 1.1em 1.1em 1.1em;
+			margin-top: 1.5em;
+			&:hover {
+				color: $dark;
+				background: $white;
+			}
+		}
+	}
+}
+
+#main_footer {
+	padding: 2.5em 0;
+	text-align: center;
+	.logo{
+		text-transform: uppercase;
+		font-weight: 800;
+		color: $dark;
+		font-size: 1.2em;
+	}
+	.copyright {
+		color: $secondary;
+		font-size: .75em;
+		margin-top: 0 auto;
+	}
+	.links {
+		display: inline;
+		a {
+			text-decoration: none;
+			font-size: 0.75em;
+			color: $lightgrey;
+			margin: 0 .5em;
+			&:hover {
+				color: $dark;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#main_nav {
+		/*under 768px width, we hide the main nav*/
+		display: none;
+	}
+	#main_nav.active {
+		display: block;
+		width: 100%;
+		a {
+			display: block;
+			color: $light;
+			padding: 1.2em 0 1.2em 1em !important;
+			border-bottom: 1px solid #E9E9E9;
+			/*removes border for last elements*/
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+	/*pops the menu bar in the main nav*/
+	.menu {
+		display: block;
+		float: right;
+		color: $dark;
+		i {
+			font-size: 1.5em;
+			color: #dark;
+			padding-top: .5em;
+		}
+	}
+
+	#banner {
+		padding: 3.5em 0;
+		#poster {
+			width: 250px;
+			.play_button {
+				width: 60px;
+				left: 50%;
+				top: 50%;
+				/*bringing back to the middle of the poster, half of 80*/
+				margin: -30px 0 0 -30px;
+			}
+		}
+		#content {
+			margin-left: 50px;
+			.title {
+				/*forces 1 line display*/
+				display: inline;
+				font-size: 1.5em;
+				color: $white;
+			}
+			.ratings {
+				/*forces 1 line display*/
+				margin: 0 0 0 .8em;
+				i {
+					font-size: 1.1em;
+				}
+				.inactive {
+					color: $secondary;
+				}
+			}
+			.description {
+				font-size: 1em;
+				color: $light;
+				font-weight: 300;
+				line-height: 1.5em;	
+
+			}
+			.info {
+				color: $white;
+				font-size: 0.65em;
+				font-weight: 700;
+				line-height: 1.5em;
+				span {
+					margin: 0 .5em;
+				}
+			}
+		}
+	}
+
+	#top_movies, #top_shows {
+		padding: 3em 0;
+		header {
+			padding: 0 0 1.5em 1.2%;
+			h2 {
+				font-size: 1.5em;
+			}
+			.view_more {
+				margin: .75em 2% 0 0;
+			}
+		}
+	}
+
+	.row {
+		.post {
+			/*100 / 6 minus the margin right*/
+			width: 30.6%;
+			margin: 0 1.3% 1.7em 1.3%;
+			.title {
+				font-size: 1.1em;
+				margin: .5em 0 .2em 0 ;
+				color: $dark;
+			}
+			.post_info {
+				font-size: .75em;
+				color: $secondary;
+				margin: .3em 0 .8em 0;
+			}
+		}
+	}	
+	#newsletter {
+		padding: 3em 0;
+		h2 {
+			font-size: 1.5em;
+		}
+		.newsletter_inner {
+			max-width: 90%;
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	#banner {
+		#poster {
+			width: 250px;
+			float: none;
+			display: block;
+			margin: 0 auto;
+			.play_button {
+				width: 60px;
+				left: 50%;
+				top: 50%;
+				/*bringing back to the middle of the poster, half of 80*/
+				margin: -30px 0 0 -30px;
+			}
+		}
+		#banner_content_wrapper {
+			display: block;
+			#poster {
+				width: 250px;
+				float: none;
+				display: block;
+				margin: 0 auto;
+			}
+			#content {
+				width: 100%;
+				margin: 1em auto 0 auto
+			}
+		}	
+	}
+
+	#top_movies, #top_shows {
+		header {
+			margin-bottom: 2em;
+		}
+	}
+
+	.row {
+		.post {
+			/*100 / 6 minus the margin right*/
+			width: 250px;
+			margin: 0 auto 1.7em auto;
+			display: block;
+			float: none;
+			.title {
+				font-size: 1.1em;
+				margin: .5em 0 .2em 0 ;
+				color: $dark;
+			}
+			.post_info {
+				font-size: .75em;
+				color: $secondary;
+				margin: .3em 0 .8em 0;
+			}
+		}
+	}
+}
+
